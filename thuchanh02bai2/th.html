@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Charts</title>
+    <!-- Thêm thư viện Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #343a40;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            margin-bottom: 30px;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        section h2 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Introduction to Charts</h1>
+    </header>
+    <nav>
+        <!-- Thêm liên kết đến các loại biểu đồ -->
+        <ul>
+            <li><a href="#scatter-plot">Scatter Plot</a></li>
+            <li><a href="#line-chart">Line Chart</a></li>
+            <li><a href="#bar-chart">Bar Chart</a></li>
+            <li><a href="#pie-chart">Pie Chart</a></li>
+            <li><a href="#donut-chart">Donut Chart</a></li>
+            <li><a href="#bubble-chart">Bubble Chart</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Mỗi loại biểu đồ có một phần riêng -->
+        <section id="scatter-plot">
+            <h2>Scatter Plot</h2>
+            <p>Mô tả, định nghĩa...</p>
+            <div class="chart-container">
+                <!-- Đồ thị Scatter Plot được vẽ bằng JavaScript sẽ được thêm vào đây -->
+                <canvas id="scatter-chart"></canvas>
+            </div>
+            <p>Các thư viện tham khảo: Plotly.js, Chart.js, D3.js</p>
+        </section>
+        <!-- Tương tự cho các loại biểu đồ khác -->
+        <section id="line-chart">
+            <h2>Line Chart</h2>
+            <p>Mô tả, định nghĩa...</p>
+            <div class="chart-container">
+                <canvas id="line-chart-container"></canvas>
+            </div>
+            <p>Các thư viện tham khảo: Plotly.js, Chart.js, D3.js</p>
+        </section>
+        <section id="bar-chart">
+            <h2>Bar Chart</h2>
+            <p>Mô tả, định nghĩa...</p>
+            <div class="chart-container">
+                <!-- Đồ thị Bar Chart được vẽ bằng JavaScript sẽ được thêm vào đây -->
+                <canvas id="bar-chart-container"></canvas>
+            </div>
+            <p>Các thư viện tham khảo: Plotly.js, Chart.js, D3.js</p>
+        </section>
+        <section id="pie-chart">
+            <h2>Pie Chart</h2>
+            <p>Mô tả, định nghĩa...</p>
+            <div class="chart-container">
+                <!-- Đồ thị Pie Chart được vẽ bằng JavaScript sẽ được thêm vào đây -->
+                <canvas id="pie-chart-container"></canvas>
+            </div>
+            <p>Các thư viện tham khảo: Plotly.js, Chart.js, D3.js</p>
+        </section>
+        <section id="donut-chart">
+            <h2>Donut Chart</h2>
+            <p>Mô tả, định nghĩa...</p>
+            <div class="chart-container">
+                <!-- Đồ thị Donut Chart được vẽ bằng JavaScript sẽ được thêm vào đây -->
+                <canvas id="donut-chart-container"></canvas>
+            </div>
+            <p>Các thư viện tham khảo: Plotly.js, Chart.js, D3.js</p>
+        </section>
+        <section id="bubble-chart">
+            <h2>Bubble Chart</h2>
+            <p>Mô tả, định nghĩa...</p>
+            <div class="chart-container">
+                <!-- Đồ thị Bubble Chart được vẽ bằng JavaScript sẽ được thêm vào đây -->
+                <canvas id="bubble-chart-container"></canvas>
+            </div>
+            <p>Các thư viện tham khảo: Plotly.js, Chart.js, D3.js</p>
+        </section>
+    </main>
+
+    <script>
+        // Vẽ biểu đồ Scatter Plot
+        var scatterCtx = document.getElementById('scatter-chart').getContext('2d');
+        var scatterChart = new Chart(scatterCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Scatter Plot',
+                    data: [{
+                        x: 1,
+                        y: 1
+                    }, {
+                        x: 2,
+                        y: 3
+                    }, {
+                        x: 3,
+                        y: 2
+                    }, {
+                        x: 4,
+                        y: 4
+                    }, {
+                        x: 5,
+                        y: 3
+                    }],
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)'
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Scatter Plot'
+                    }
+                }
+            }
+        });
+
+        // Vẽ biểu đồ Line Chart
+        var lineCtx = document.getElementById('line-chart-container').getContext('2d');
+        var lineChart = new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Line Chart',
+                    data: [10, 20, 30, 40, 50],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Màu nền
+                    borderColor: 'rgb(75, 192, 192)', // Màu viền
+                    borderWidth: 2, // Độ dày viền
+                    pointBackgroundColor: 'rgb(75, 192, 192)', // Màu của điểm
+                    pointBorderColor: 'rgb(75, 192, 192)', // Màu viền điểm
+                    pointBorderWidth: 1, // Độ dày viền điểm
+                    pointRadius: 4, // Độ lớn của điểm
+                    pointHoverRadius: 6, // Độ lớn của điểm khi di chuột qua
+                    tension: 0.4, // Độ cong của đường
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Line Chart',
+                        fontSize: 18, // Cỡ chữ tiêu đề
+                        fontColor: '#333', // Màu chữ tiêu đề
+                        padding: 20 // Khoảng cách từ biểu đồ đến tiêu đề
+                    },
+                    legend: {
+                        display: true, // Hiển thị chú thích
+                        position: 'bottom', // Vị trí chú thích
+                        labels: {
+                            fontColor: '#333' // Màu chữ chú thích
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false // Ẩn grid trên trục x
+                        },
+                        ticks: {
+                            fontColor: '#333' // Màu chữ trên trục x
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: '#ddd' // Màu của grid trên trục y
+                        },
+                        ticks: {
+                            fontColor: '#333' // Màu chữ trên trục y
+                        }
+                    }
+                }
+            }
+        });
+
+
+        // Vẽ biểu đồ Bar Chart
+        var barCtx = document.getElementById('bar-chart-container').getContext('2d');
+        var barChart = new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Bar Chart',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Bar Chart'
+                    }
+                }
+            }
+        });
+
+        // Vẽ biểu đồ Pie Chart
+        document.addEventListener('DOMContentLoaded', function () {
+            var pieCtx = document.getElementById('pie-chart-container').getContext('2d');
+            var pieChart = new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow'],
+                    datasets: [{
+                        label: 'Pie Chart',
+                        data: [300, 50, 100],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)'
+                        ]
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Pie Chart'
+                        }
+                    }
+                }
+            });
+        });
+
+        // Vẽ biểu đồ Donut Chart
+        var donutCtx = document.getElementById('donut-chart-container').getContext('2d');
+        var donutChart = new Chart(donutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow'],
+                datasets: [{
+                    label: 'Donut Chart',
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ]
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Donut Chart'
+                    }
+                }
+            }
+        });
+
+        // Vẽ biểu đồ Bubble Chart
+        var bubbleCtx = document.getElementById('bubble-chart-container').getContext('2d');
+        var bubbleChart = new Chart(bubbleCtx, {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: 'Bubble Chart',
+                    data: [{
+                        x: 20,
+                        y: 30,
+                        r: 15
+                    }, {
+                        x: 40,
+                        y: 10,
+                        r: 10
+                    }],
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)'
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Bubble Chart'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
